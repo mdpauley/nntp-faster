@@ -1,0 +1,27 @@
+{
+  "name": "nntp-faster",
+  "version": "1.0.0",
+  "description": "nntp-fast extended to include more nntp commands",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdpauley/nntp-faster.git"
+  },
+  "keywords": [
+    "nntp-fast",
+    "nntp",
+    "usenet"
+  ],
+  "author": "mdpauley <mdpauley@gmail.com>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/mdpauley/nntp-faster/issues"
+  },
+  "homepage": "https://github.com/mdpauley/nntp-faster#readme",
+  "dependencies": {
+    "nntp-fast": "^0.2.1"
+  }
+}
