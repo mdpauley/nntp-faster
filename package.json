@@ -15,7 +15,11 @@
     "nntp",
     "usenet"
   ],
-  "author": "mdpauley <mdpauley@gmail.com>",
+  "author": {
+    "name": "mdpauley",
+    "email": "mdpauley@gmail.com",
+    "url": "https://mdpauley.com"
+  },
   "license": "Unlicense",
   "bugs": {
     "url": "https://github.com/mdpauley/nntp-faster/issues"
