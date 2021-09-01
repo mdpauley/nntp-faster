@@ -1,76 +1,79 @@
-const { NntpConnection } = require("nntp-fast");
+const { NntpConnection } = require('nntp-fast')
 
 class NntpFaster extends NntpConnection {
   constructor() {
-    super();
+    super()
   }
 
   async tlsconnect(host, port) {
-    const res = await this.connect(host, (port ? port : 563), true);
+    const res = await this.connect(host, port ? port : 563, true)
 
     if ([200 /*, 430, 412, 423, 420*/].includes(res.code)) {
-      if (!res.message) throw new Error("no data on message");
+      if (!res.message) throw new Error('no data on message')
       return {
-          code: res.code,
-          body: res.message,
-        };
+        code: res.code,
+        body: res.message,
+      }
     } else {
-      throw res;
+      throw res
     }
   }
 
   async login(user, pass) {
-    await this.runCommand("AUTHINFO USER" + (user ? " " + user : ""));
+    await this.runCommand('AUTHINFO USER' + (user ? ' ' + user : ''))
 
-    const res = await this.runCommand("AUTHINFO PASS" + (pass ? " " + pass : ""));
+    const res = await this.runCommand(
+      'AUTHINFO PASS' + (pass ? ' ' + pass : '')
+    )
 
     if ([281 /*, 430, 412, 423, 420*/].includes(res.code)) {
-      if (!res.message) throw new Error("no data on message");
+      if (!res.message) throw new Error('no data on message')
       return {
-          code: res.code,
-          body: res.message,
-        };
+        code: res.code,
+        body: res.message,
+      }
     } else {
-      throw res;
+      throw res
     }
   }
 
   async xover(startarticle, endarticle) {
     const res = await this.runCommand(
-      "XOVER" +
-        (startarticle ? " " + startarticle : "") +
-        "-" +
-        (endarticle ? " " + endarticle : "")
-    );
+      'XOVER' +
+        (startarticle ? ' ' + startarticle : '') +
+        '-' +
+        (endarticle ? ' ' + endarticle : '')
+    )
 
     if ([224 /*, 430, 412, 423, 420*/].includes(res.code)) {
-      if (!res.data) throw new Error("no data on body");
+      if (!res.data) throw new Error('no data on body')
       return {
         code: res.code,
-        body: res.data.toString().split("\r\n").map(x => x.replaceAll('\t', ' ')),
-      };
+        body: res.data
+          .toString()
+          .split('\r\n')
+          .map((x) => x.replaceAll('\t', ' ')),
+      }
     } else {
-      throw res;
+      throw res
     }
   }
 
   over = this.xover
 
   async getcapabilities() {
-    const res = await this.runCommand(
-      "CAPABILITIES"
-    );
+    const res = await this.runCommand('CAPABILITIES')
 
     if ([101 /*, 430, 412, 423, 420*/].includes(res.code)) {
-      if (!res.data) throw new Error("no data on body");
+      if (!res.data) throw new Error('no data on body')
       return {
         code: res.code,
-        body: res.data.toString().split("\r\n"),
-      };
+        body: res.data.toString().split('\r\n'),
+      }
     } else {
-      throw res;
+      throw res
     }
-  }  
+  }
 }
 
-exports.NntpFaster = NntpFaster;
+exports.NntpFaster = NntpFaster
