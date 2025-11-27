@@ -1,34 +1,25 @@
 {
-  "name": "nntp-faster",
-  "version": "1.0.0",
+  "author": {
+    "email": "mdpauley@gmail.com",
+    "name": "mdpauley",
+    "url": "https://mdpauley.com"
+  },
+  "bugs": {
+    "url": "https://github.com/mdpauley/nntp-faster/issues"
+  },
+  "dependencies": {
+    "nntp-fast": "^0.2.1"
+  },
   "description": "nntp-fast extended to include more nntp commands",
-  "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mdpauley/nntp-faster.git"
-  },
+  "homepage": "https://github.com/mdpauley/nntp-faster#readme",
   "keywords": [
     "nntp-fast",
     "nntp",
     "usenet"
   ],
-  "author": {
-    "name": "mdpauley",
-    "email": "mdpauley@gmail.com",
-    "url": "https://mdpauley.com"
-  },
   "license": "Unlicense",
-  "bugs": {
-    "url": "https://github.com/mdpauley/nntp-faster/issues"
-  },
-  "homepage": "https://github.com/mdpauley/nntp-faster#readme",
-  "dependencies": {
-    "nntp-fast": "^0.2.1"
-  },
+  "main": "index.js",
+  "name": "nntp-faster",
   "prettier": {
     "arrowParens": "always",
     "bracketSpacing": true,
@@ -47,5 +38,14 @@
     "trailingComma": "es5",
     "useTabs": false,
     "vueIndentScriptAndStyle": false
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdpauley/nntp-faster.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "version": "1.5.0"
 }
