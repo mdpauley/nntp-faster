@@ -14,7 +14,7 @@ Example
 Example that fetches an aritcle from _news.php.net_ newsserver:
 
 ``` javascript
-const { NntpFaster } = require('nntp-faster');
+import { NntpFaster } from 'nntp-faster';
 
 async function main() {
     const conn = new NntpFaster();
@@ -46,7 +46,7 @@ main()
 Example using streams and secure (TLS) connection:
 
 ``` javascript
-const { NntpFaster } = require('nntp-faster');
+import { NntpFaster } from 'nntp-faster';
 
 async function main() {
     const conn = new NntpFaster({ dotUnstuffing: false });

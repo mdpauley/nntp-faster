@@ -1,4 +1,4 @@
-const { NntpConnection } = require('nntp-fast')
+import { NntpConnection } from 'nntp-fast'
 
 class NntpFaster extends NntpConnection {
   constructor() {
@@ -76,4 +76,4 @@ class NntpFaster extends NntpConnection {
   }
 }
 
-exports.NntpFaster = NntpFaster
+export { NntpFaster }
